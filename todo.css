@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* =========================
+   TODO FORM
+========================= */
+
+form {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 12px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+/* =========================
+   INPUT
+========================= */
+
+#userInput {
+    flex: 1;
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    color: #333;
+
+    transition: 0.3s ease;
+}
+
+#userInput::placeholder {
+    color: #999;
+}
+
+#userInput:focus {
+    border-color: #667eea;
+
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+#addTodo {
+    width: 110px;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#addTodo:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+}
+
+#addTodo:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   DISPLAY
+========================= */
+
+#display {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 30px auto 0;
+}
+
+/* =========================
+   TODO ITEM
+========================= */
+
+.todo-item {
+    min-height: 65px;
+
+    margin-bottom: 14px;
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+/* Todo Text */
+
+.todo-item span {
+    flex: 1;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #333;
+
+    word-break: break-word;
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.todo-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* =========================
+   EDIT BUTTON
+========================= */
+
+.editTodo {
+    border: none;
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    background: #667eea;
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.editTodo:hover {
+    background: #5568d9;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.deleteTodo {
+    border: none;
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    background: #ef4444;
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.deleteTodo:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    #userInput,
+    #addTodo {
+        height: 50px;
+    }
+
+    #addTodo {
+        width: 95px;
+    }
+
+    .todo-item {
+        padding: 13px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    form {
+        flex-direction: column;
+    }
+
+    #userInput,
+    #addTodo {
+        width: 100%;
+    }
+
+    #addTodo {
+        height: 50px;
+    }
+
+    .todo-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .todo-buttons {
+        width: 100%;
+    }
+
+    .editTodo,
+    .deleteTodo {
+        flex: 1;
+    }
+}
